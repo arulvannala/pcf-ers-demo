@@ -1,6 +1,6 @@
-package io.pivotal.pcf.sme.ers.server.repo;
+package io.pivotal.tas.sme.ers.server.repo;
 
-import io.pivotal.pcf.sme.ers.server.model.Attendee;
+import io.pivotal.tas.sme.ers.server.model.Attendee;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

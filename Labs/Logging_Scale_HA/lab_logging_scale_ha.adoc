@@ -7,7 +7,7 @@
 
 [abstract]
 --
-How PCF facilitates application management, including: access application 
+How tas facilitates application management, including: access application 
 logs, scale an application, access events and handle failed application 
 instances
 --
@@ -16,7 +16,7 @@ Estimated Time: 30 minutes
 
 == Access Application Logs
 
-Review the documentation on http://docs.pivotal.io/pivotalcf/1-11/devguide/deploy-apps/streaming-logs.html[application logs].
+Review the documentation on http://docs.Vmware.io/Vmwarecf/1-11/devguide/deploy-apps/streaming-logs.html[application logs].
 
 You can tail the logs:
 ----
@@ -105,7 +105,7 @@ _Notice how quickly the new application instances are provisioned and subsequent
 
 
 == High Availability
-Pivotal Cloud Foundry has https://content.pivotal.io/blog/the-four-levels-of-ha-in-pivotal-cf[4 levels of HA] (High Availability) that keep your applications and the underlying platform running. In this section, we will demonstrate one of them. Failed application instances will be recovered.
+Vmware Tanzu Application Service has https://content.Vmware.io/blog/the-four-levels-of-ha-in-Vmware-cf[4 levels of HA] (High Availability) that keep your applications and the underlying platform running. In this section, we will demonstrate one of them. Failed application instances will be recovered.
 +
 . At this time you should be running multiple instances of `attendees`. Confirm this with the following command:
 ----
@@ -117,7 +117,7 @@ $ cf app attendees
 ----
 $ cf app attendees
 ----
-Sample output below (notice the requested state vs actual state). In this case, Pivotal Cloud Foundry had already detected the failure and is starting a new instance.
+Sample output below (notice the requested state vs actual state). In this case, Vmware Tanzu Application Service had already detected the failure and is starting a new instance.
 ----
 Showing health and status for app attendees in org mborges-org / space development as admin...
 
@@ -125,7 +125,7 @@ name:              attendees
 requested state:   started
 instances:         3/3
 usage:             768M x 3 instances
-routes:            attendees-doxastic-progenitiveness.apps.pcf.homelab.lan
+routes:            attendees-doxastic-progenitiveness.apps.tas.homelab.lan
 last uploaded:     Wed 09 Aug 17:18:22 CDT 2017
 stack:             cflinuxfs2
 buildpack:         container-security-provider=1.5.0_RELEASE

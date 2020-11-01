@@ -1,6 +1,6 @@
 ---
 applications:
-- name: pcf-ers-demo-test
+- name: tas-ers-demo-test
   memory: 1024MB
   instances: 1
   random-route: true

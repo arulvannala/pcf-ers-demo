@@ -1,4 +1,4 @@
-#pcf-ers-demo on concourse
+#tas-ers-demo on concourse
 
 ![](images/pipeline.png)
 
@@ -11,19 +11,19 @@
 
 Resources in concourse are implemented as docker images which contain implementations corresponding their types
 
-* git-repo ([git-resource](https://github.com/concourse/git-resource)): A Github repo. E.g. pcf-ers-demo Github resource
+* git-repo ([git-resource](https://github.com/concourse/git-resource)): A Github repo. E.g. tas-ers-demo Github resource
 
 * version ([semver-resource](https://github.com/concourse/semver-resource)): A file to track the version stored in Github. E.g. 1.0.1 in a file named as current-version
 
-* release-candidate (([github-resource](https://github.com/concourse/github-release-resource))) Store pcf-ers-demo artifact E.g. pcf-ers-demo-1.0.1-rc1.jar
+* release-candidate (([github-resource](https://github.com/concourse/github-release-resource))) Store tas-ers-demo artifact E.g. tas-ers-demo-1.0.1-rc1.jar
 
-* production-release (([github-resource](https://github.com/concourse/github-release-resource))) Store pcf-ers-demo artifact E.g. pcf-ers-demo-1.0.1.jar
+* production-release (([github-resource](https://github.com/concourse/github-release-resource))) Store tas-ers-demo artifact E.g. tas-ers-demo-1.0.1.jar
 
 ## Pipeline Progress
 
 ### Check out from the git-repo
 
-### Unit testing pcf-ers-demo
+### Unit testing tas-ers-demo
 
 This step runs on a container with maven and java installed.
 Basically it just runs "./mvnw test" against the git-repo
@@ -65,7 +65,7 @@ Basically it just runs "./mvnw test" against the git-repo
 * Fork this github repo to your own github account, [ generate the key pair and add the public key to github ](https://help.github.com/articles/generating-ssh-keys/), and save the private key for future usage.
 
 
-* Install PCF Dev ([Vagrant VM](http://pivotal.io/pcf-dev))
+* Install tas Dev ([Vagrant VM](http://Vmware.io/tas-dev))
  * Setup spaces for development, test, uat and production
   * `cf create-space development`
   * `cf create-space test`
@@ -77,11 +77,11 @@ Basically it just runs "./mvnw test" against the git-repo
 
   * `fly -t lite login -c http://192.168.100.4:8080`
 
-  * Configure your environment details in pcf-ers-demo-credentials.yml
+  * Configure your environment details in tas-ers-demo-credentials.yml
 
-  * `fly -t lite set-pipeline -p pcf-ers-demo -c ci/pipeline.yml -l pcf-ers-demo-credentials.yml`
-  * `fly -t lite unpause-pipeline -p pcf-ers-demo`
+  * `fly -t lite set-pipeline -p tas-ers-demo -c ci/pipeline.yml -l tas-ers-demo-credentials.yml`
+  * `fly -t lite unpause-pipeline -p tas-ers-demo`
   * Open `http://192.168.100.4:8080` in your browser and enjoy!
 
 * You will also need to set up github repos and a [github access token](https://github.com/settings/tokens) for your release repo
-###  __FYI DO NOT COMMIT `pcf-ers-demo-credentials.yml` as it has all your secrets__
+###  __FYI DO NOT COMMIT `tas-ers-demo-credentials.yml` as it has all your secrets__

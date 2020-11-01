@@ -7,7 +7,7 @@
 
 [abstract]
 --
-How to control usage in your Pivotal Cloud Foundry orgs and spaces using quotas
+How to control usage in your Vmware Tanzu Application Service orgs and spaces using quotas
 --
 
 Estimated Time: 25 minutes
@@ -18,7 +18,7 @@ Estimated Time: 25 minutes
 
 == Explore Existing Quotas
 
-. Review http://docs.pivotal.io/pivotalcf/adminguide/quota-plans.html[Creating and Modifying Quota Plans].
+. Review http://docs.Vmware.io/Vmwarecf/adminguide/quota-plans.html[Creating and Modifying Quota Plans].
 
 . View available quota plans.
 +
@@ -75,7 +75,7 @@ $ cf org dnr-org
 
 == Create a New Space
 
-1) Log in as the `OrgManager` user (john.q.manager@pivotal.io) created in the [previous lab](../orgs-spaces-roles).
+1) Log in as the `OrgManager` user (john.q.manager@Vmware.io) created in the [previous lab](../orgs-spaces-roles).
 ----
 $ cf login
 ----
@@ -86,18 +86,18 @@ $ cf login
 $ cf create-space staging
 ----
 
-3) Give your `SpaceDeveloper` (john.q.developer@pivotal.io) access to the `staging` space.
+3) Give your `SpaceDeveloper` (john.q.developer@Vmware.io) access to the `staging` space.
 
 For example:
 ----
-$ cf set-space-role john.q.developer@pivotal.io dnr-org staging SpaceDeveloper
+$ cf set-space-role john.q.developer@Vmware.io dnr-org staging SpaceDeveloper
 ----
 
 
 
 == Simulate Developer Usage
 
-1) Log in as the `SpaceDeveloper` (john.q.developer@pivotal.io) you created in the [previous lab](../orgs-spaces-roles).  Target the `dev` space.
+1) Log in as the `SpaceDeveloper` (john.q.developer@Vmware.io) you created in the [previous lab](../orgs-spaces-roles).  Target the `dev` space.
 
 ----
 $ cf login
@@ -148,7 +148,7 @@ $ cf delete-service a2
 
 == Create and Set a Space Quota
 
-1) Log in as the `OrgManager` user (john.q.manager@pivotal.io) created in the [previous lab](../orgs-spaces-roles).  Target the `dev` space.
+1) Log in as the `OrgManager` user (john.q.manager@Vmware.io) created in the [previous lab](../orgs-spaces-roles).  Target the `dev` space.
 
 ----
 $ cf login
@@ -191,7 +191,7 @@ $ cf space staging
 
 == Simulate Developer Usage
 
-1) Log in as the `SpaceDeveloper` (john.q.developer@pivotal.io) you created in the [previous lab](../orgs-spaces-roles).  Target the `dev` space.
+1) Log in as the `SpaceDeveloper` (john.q.developer@Vmware.io) you created in the [previous lab](../orgs-spaces-roles).  Target the `dev` space.
 
 ----
 $ cf login

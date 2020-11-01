@@ -1,6 +1,6 @@
 ---
 applications:
-- name: pcf-ers-demo-uat
+- name: tas-ers-demo-uat
   memory: 1024MB
   instances: 1
   random-route: true

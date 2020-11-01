@@ -84,14 +84,14 @@ jobs:
       file: git-repo/ci/tasks/build-artifact.yml
       timeout: 5m
       params:
-        base_name: pcf-ers-demo
+        base_name: tas-ers-demo
     - put: release-candidate
       params:
         name: git-repo/ci/name
         tag: version/number
         body: git-repo/ci/release-body
         globs:
-          - artifact-dir/pcf-ers-demo*.jar
+          - artifact-dir/tas-ers-demo*.jar
     - put: git-repo
       params:
         repository: git-repo
@@ -113,8 +113,8 @@ jobs:
     - put: deploy-test-app
       params:
         manifest: git-repo/manifest-test.yml
-        current_app_name: pcf-ers-demo-test
-        path: release-candidate/pcf-ers-demo*.jar
+        current_app_name: tas-ers-demo-test
+        path: release-candidate/tas-ers-demo*.jar
 
   - name: promote-to-uat
     serial_groups: [version]
@@ -130,8 +130,8 @@ jobs:
     - put: deploy-uat-app
       params:
         manifest: git-repo/manifest-uat.yml
-        current_app_name: pcf-ers-demo-uat
-        path: release-candidate/pcf-ers-demo*.jar
+        current_app_name: tas-ers-demo-uat
+        path: release-candidate/tas-ers-demo*.jar
 
   - name: ship-it
     serial_groups: [version]
@@ -148,19 +148,19 @@ jobs:
     - task: prepare-final
       file: git-repo/ci/tasks/prepare-final.yml
       params:
-        base_name: pcf-ers-demo
+        base_name: tas-ers-demo
     - put: production-release
       params:
         name: git-repo/ci/name
         tag: version/number
         body: git-repo/ci/release-body
         globs:
-          - final-dir/pcf-ers-demo*.jar
+          - final-dir/tas-ers-demo*.jar
     - put: deploy-production-app
       params:
         manifest: git-repo/manifest-prod.yml
-        current_app_name: pcf-ers-demo
-        path: final-dir/pcf-ers-demo*.jar
+        current_app_name: tas-ers-demo
+        path: final-dir/tas-ers-demo*.jar
 
   - name: major
     serial_groups: [ version ]

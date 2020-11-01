@@ -1,4 +1,4 @@
-package io.pivotal.pcf.sme.ers.client.model;
+package io.pivotal.tas.sme.ers.client.model;
 
 import org.springframework.hateoas.PagedResources;
 

@@ -45,7 +45,7 @@ For example:
 Getting routes for org mborges-org / space development as admin ...
 
 space         host                                 domain                 port   path   type   apps                     service
-development   attendees-doxastic-progenitiveness   apps.pcf.homelab.lan                        attendees
+development   attendees-doxastic-progenitiveness   apps.tas.homelab.lan                        attendees
 ----
 . Now let's `push` the next version of `attendees`.
 +
@@ -54,8 +54,8 @@ However, this time we will specify the hostname by appending `-temp` to our prod
 For example (your hostname will be different):
 +
 ----
-$ cd ~/pcf-ers-demo/
-$ cf push attendees-v2 -p ./pcf-ers-demo1-0.0.1-SNAPSHOT.jar -m 768M -n attendees-doxastic-progenitiveness-temp --no-start
+$ cd ~/tas-ers-demo/
+$ cf push attendees-v2 -p ./tas-ers-demo1-0.0.1-SNAPSHOT.jar -m 768M -n attendees-doxastic-progenitiveness-temp --no-start
 ----
 +
 . Bind attendees-v2 to the database service created eariler
@@ -84,7 +84,7 @@ At this point in the deployment process, you could do further testing of the ver
 For example (your domain and hostname may be different):
 +
 ----
-$ cf map-route attendees-v2 apps.pcf.homelab.lan -n attendees-doxastic-progenitiveness
+$ cf map-route attendees-v2 apps.tas.homelab.lan -n attendees-doxastic-progenitiveness
 ----
 +
 . Return to browser tab where you started the load. You should see that it is starting to send requests to version 2.
@@ -123,7 +123,7 @@ Remove the production route from the `attendees` application.
 For example (your domain and hostname may be different):
 +
 ----
-$ cf unmap-route attendees apps.pcf.homelab.lan -n attendees-doxastic-progenitiveness
+$ cf unmap-route attendees apps.tas.homelab.lan -n attendees-doxastic-progenitiveness
 ----
 If you `Reset` the load generator, you will see all the traffic goes to `attendees-v2`.
 +
@@ -136,7 +136,7 @@ image::blue_green5.png[]
 For example (your domain and hostname may be different):
 +
 ----
-$ cf unmap-route attendees-v2 cfapps-01.haas-66.pez.pivotal.io -n attendees-heartsickening-elegance-temp
+$ cf unmap-route attendees-v2 cfapps-01.haas-66.pez.Vmware.io -n attendees-heartsickening-elegance-temp
 ----
 *Congratulations!* You performed a blue-green deployment.
 

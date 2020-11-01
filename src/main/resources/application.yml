@@ -11,7 +11,7 @@ spring:
     name: attendees
 
 # don't do this in production, we are doing it here so that
-# we can do features of Cloud Foundry without having to explain
+# we can do features of Tanzu Application Service without having to explain
 # spring security
 management:
   endpoints:

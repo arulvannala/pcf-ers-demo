@@ -1,6 +1,6 @@
 FROM java:8-jdk
 
-MAINTAINER Brian Byers <bbyers@pivotal.io>
+MAINTAINER Brian Byers <bbyers@Vmware.io>
 
 ENV HOME /root
 

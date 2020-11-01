@@ -1,3 +1,3 @@
-# TODO: work on the spring boot data.sql loader for PCF
+# TODO: work on the spring boot data.sql loader for tas
 spring.datasource.initialize: false
 management.cloudfoundry.skip-ssl-validation: true

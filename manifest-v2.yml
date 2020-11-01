@@ -4,7 +4,7 @@ applications:
   memory: 1GB
   instances: 1
   random-route: true
-  path: target/pcf-ers-demo-2.0.jar
+  path: target/tas-ers-demo-2.0.jar
 #  buildpack: java_buildpack
   services: []
   env:

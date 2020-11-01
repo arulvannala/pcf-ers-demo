@@ -1,8 +1,8 @@
-package com.gopivotal.pcf.sme.ers.server;
+package com.goVmware.tas.sme.ers.server;
 
-import io.pivotal.pcf.sme.ers.PcfErsDemo1Application;
-import io.pivotal.pcf.sme.ers.server.model.Attendee;
-import io.pivotal.pcf.sme.ers.server.repo.AttendeeRepository;
+import io.pivotal.tas.sme.ers.tasErsDemo1Application;
+import io.pivotal.tas.sme.ers.server.model.Attendee;
+import io.pivotal.tas.sme.ers.server.repo.AttendeeRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,8 +16,8 @@ import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringBootTest(classes = PcfErsDemo1Application.class)
-public class PcfErsDemo1ApplicationTests {
+@SpringBootTest(classes = tasErsDemo1Application.class)
+public class tasErsDemo1ApplicationTests {
 	
 	@Autowired
 	private AttendeeRepository attendeeRepository;

@@ -1,5 +1,5 @@
-= Pivotal Cloud Foundry Basics 
-Pivotal Platform Architecture Team
+= Vmware Tanzu Application Service Basics 
+Vmware Platform Architecture Team
 :backend: deckjs
 :deckjs_transition: fade
 :navigation:

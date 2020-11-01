@@ -1,8 +1,8 @@
 {
     "package": {
-        "name": "pcf-ers-demo1",
+        "name": "tas-ers-demo1",
         "repo": "generic",
-        "subject": "mborges-pivotal"
+        "subject": "mborges-Vmware"
     },
 
     "version": {

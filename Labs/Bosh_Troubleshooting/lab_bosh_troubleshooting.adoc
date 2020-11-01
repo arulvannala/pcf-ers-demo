@@ -22,7 +22,7 @@ You can do this from your local machine or the Remote Desktop with PuTTY. (Make 
 For example:
 +
 ----
-$ ssh ubuntu@opsmgr.haas-69.pez.pivotal.io
+$ ssh ubuntu@opsmgr.haas-69.pez.Vmware.io
 ----
 +
 . Explore key directories.
@@ -86,7 +86,7 @@ Ops Manager has a `debug` endpoint that can be useful when filing bug reports or
 
 == Using Bosh
 
-. Review the documentation on http://docs.pivotal.io/pivotalcf/customizing/trouble-advanced.html[Advanced Troubleshooting].
+. Review the documentation on http://docs.Vmware.io/Vmwarecf/customizing/trouble-advanced.html[Advanced Troubleshooting].
 
 . Browse to the `Status` tab of the `Ops Manager Director` tile and record the IP.
 +
@@ -98,7 +98,7 @@ Click `Link to Credential` and record the Director Credentials.
 +
 image::bosh-creds.png[]
 +
-. From within the Ops Manager web application VM (ubuntu@pivotal-ops-manager https://bosh.io/docs/sysadmin-commands.html#director[target] the `bosh` CLI.
+. From within the Ops Manager web application VM (ubuntu@Vmware-ops-manager https://bosh.io/docs/sysadmin-commands.html#director[target] the `bosh` CLI.
 
 ----
 $ bosh --ca-cert /var/tempest/workspaces/default/root_ca_certificate target <IP-ADDRESS-FROM-STEP-2>
@@ -126,7 +126,7 @@ $ bosh vms
 $ bosh vms --details --vitals
 ----
 +
-. Review the documentation on <a target="_blank" href="http://docs.pivotal.io/pivotalcf/customizing/trouble-advanced.html#product">selecting a deployment to troubleshoot</a>.
+. Review the documentation on <a target="_blank" href="http://docs.Vmware.io/Vmwarecf/customizing/trouble-advanced.html#product">selecting a deployment to troubleshoot</a>.
 +
 . Set the `cf-<GUID>` deployment as the active deployment to work with.
 +
@@ -182,9 +182,9 @@ image::delete-router.png[]
 $ bosh vms cf-<GUID>
 ----
 
-You can also monitor the vCenter Task pane to see the VM being recreated.
+You can also monitor the vCenter task pane to see the VM being recreated.
 
-![Task Pane](task-pane.png)
+![task Pane](task-pane.png)
 
 === Questions
 
@@ -258,7 +258,7 @@ In the form, enter the following values (if a value is not specified, accept the
 | Field        | Value
 
 | File protocal  | SCP
-| Host name | opsmgr.haas-[NN].pez.pivotal.io
+| Host name | opsmgr.haas-[NN].pez.Vmware.io
 | User name | ubuntu
 | password  | (provided by your instructor)
 |===
@@ -280,7 +280,7 @@ Unpack the logs and explore!
 
 Bosh uses http://mmonit.com/monit[monit] to manage https://bosh.io/docs/vm-monit.html#using-monit[running processes] on VMs.
 
-. Review the directions on http://docs.pivotal.io/pivotalcf/customizing/trouble-advanced.html#bosh-ssh[bosh ssh].
+. Review the directions on http://docs.Vmware.io/Vmwarecf/customizing/trouble-advanced.html#bosh-ssh[bosh ssh].
 . `bosh ssh` to ssh into a Diego cell.
 +
 ----
@@ -333,7 +333,7 @@ $ watch /var/vcap/bosh/bin/monit summary
 +
 `Control + C` to stop the `watch`.
 +
-. Repeat killing the `rep` process and view the effects in `Pivotal Elastic Runtime` tile `Status` tab within Ops Manager.
+. Repeat killing the `rep` process and view the effects in `Vmware Elastic Runtime` tile `Status` tab within Ops Manager.
 +
 image::rep-down.png[]
 
@@ -346,4 +346,4 @@ image::rep-down.png[]
 
 == Beyond the class
 
-Learn more about using BOSH to troubleshoot a PCF installation.  https://blog.pivotal.io/labs/labs/troubleshooting-bosh-releasesdeployments[This blog] is a great starting point.
+Learn more about using BOSH to troubleshoot a tas installation.  https://blog.Vmware.io/labs/labs/troubleshooting-bosh-releasesdeployments[This blog] is a great starting point.

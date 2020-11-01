@@ -1,4 +1,4 @@
-package io.pivotal.pcf.sme.ers.client.ui.controller;
+package io.pivotal.tas.sme.ers.client.ui.controller;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -19,19 +19,19 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import io.pivotal.pcf.sme.ers.server.model.Attendee;
-import io.pivotal.pcf.sme.ers.server.repo.AttendeeRepository;
+import io.pivotal.tas.sme.ers.server.model.Attendee;
+import io.pivotal.tas.sme.ers.server.repo.AttendeeRepository;
 
 /**
  * AttendeeServices
- * 
+ *
  * The purpose of this service class is to have a clear separation from the UI
  * to the client.
- * 
+ *
  * This is a RestController and all the UI stuff is done by the MVC controller.
- * 
+ *
  * @see AttendeeController
- * 
+ *
  * @author mborges
  *
  */
@@ -40,59 +40,59 @@ public class AttendeeService {
 
 	private static final Logger logger = LoggerFactory
 			.getLogger(AttendeeService.class);
-	
+
 	/// Polluting with server code (Attendee Model Object)
 	// http://blog.zenika.com/2012/06/15/hateoas-paging-with-spring-mvc-and-spring-data-jpa/
-	
+
 	@Autowired
 	private AttendeeRepository attendeeRepository;
-	
-	void add(io.pivotal.pcf.sme.ers.client.model.Attendee a1) {
+
+	void add(io.pivotal.tas.sme.ers.client.model.Attendee a1) {
 		Attendee a2 = new Attendee();
 		a2.setFirstName(a1.getFirstName());
 		a2.setLastName(a1.getLastName());
 		a2.setEmailAddress(a1.getEmailAddress());
 		attendeeRepository.saveAndFlush(a2);
 	}
-	
+
 	void deleteAll() {
 		attendeeRepository.deleteAll();
 	}
-	
+
 	// returning server object
 	Iterable<Attendee> getAttendees() {
 		return attendeeRepository.findAll();
 	}
-	
+
 	// returning server object
 	Iterable<Attendee> searchName(String firstName) {
 		return attendeeRepository.findByFirstNameContainsIgnoreCase(firstName, new PageRequest(0,100));
 	}
-	
+
 
 	/**
 	 * bluegreenRequest - It really just returns the app name.
-	 * 
-	 * The purpose is to show PCF load balancing between applications that share
+	 *
+	 * The purpose is to show tas load balancing between applications that share
 	 * routes
-	 * 
+	 *
 	 * @return
-	 * @throws Exception 
+	 * @throws Exception
 	 */
 	@SuppressWarnings("unchecked")
 	@RequestMapping("/bluegreen-check")
 	public String[] bluegreenRequest() throws Exception {
-		
+
 		List<String> values = new ArrayList<String>();
 		values.add((String) getVcapApplicationMap().getOrDefault("application_name", "no name environment variable"));
 		values.add(getVcapApplicationMap().getOrDefault("instance_index", "running locally").toString());
-		
+
 		return values.toArray(new String[0]);
 	}
 
 	/**
 	 * addAppEnv - Retrieve information about the application
-	 * 
+	 *
 	 * @return
 	 * @throws Exception
 	 */
@@ -149,17 +149,17 @@ public class AttendeeService {
 			Map<String,Object> servicesMap  = Collections.synchronizedMap(new LinkedHashMap<String,Object>());
 			for (Map.Entry<String,?> entry : services.entrySet()) {
 				List list = (List)entry.getValue();
-			    
+
 			    for (Object object : list) {
 					logger.debug("list: {}", object.getClass());
 			    	Map map = (Map)object;
 			    	//weird delimiter and UUID is to deal with multiple services of the same type
-				    servicesMap.put(entry.getKey() + "~~~" + UUID.randomUUID().toString(), map.get("name"));		    		
+				    servicesMap.put(entry.getKey() + "~~~" + UUID.randomUUID().toString(), map.get("name"));
 				}
 			}
 			return servicesMap;
-			
-		}	
+
+		}
 	@SuppressWarnings("rawtypes")
 	private Map getVcapApplicationMap() throws Exception {
 		return getEnvMap("VCAP_APPLICATION");

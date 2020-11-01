@@ -1,4 +1,4 @@
-package io.pivotal.pcf.sme.ers.client.ui.controller;
+package io.pivotal.tas.sme.ers.client.ui.controller;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import io.pivotal.pcf.sme.ers.client.model.Attendee;
+import io.pivotal.tas.sme.ers.client.model.Attendee;
 
 /**
  * AttendeeController
@@ -70,7 +70,7 @@ public class AttendeeController {
 		if (doit) {
 			model.addAttribute("killed", true);
 			log.warn("*** The system is shutting down. ***");
-			Runnable killTask = () -> {
+			Runnable killtask = () -> {
 				try {
 					String name = Thread.currentThread().getName();
 					log.warn("killing shortly " + name);
@@ -81,7 +81,7 @@ public class AttendeeController {
 					e.printStackTrace();
 				}
 			};
-			new Thread(killTask).start();
+			new Thread(killtask).start();
 		}
 
 		return "basics";

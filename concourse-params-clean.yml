@@ -1,4 +1,4 @@
-GIT_REPO: git@github.com:mygituser/pcf-ers-demo.git
+GIT_REPO: git@github.com:mygituser/tas-ers-demo.git
 CF_API: REPLACE_ME
 CF_DEV_ORG: myorg
 CF_DEV_SPACE: dev
@@ -12,7 +12,7 @@ CF_USER: myuser
 CF_PASS: mypassword
 GIT_USER: mygituser
 GIT_ACCESS_TOKEN: mygittoken
-GIT_RELEASE_REPO: pcf-ers-demo
+GIT_RELEASE_REPO: tas-ers-demo
 GIT_PRIVATE_KEY: |
   -----BEGIN RSA PRIVATE KEY-----
 
